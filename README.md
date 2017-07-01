@@ -7,8 +7,3 @@ Ferramentas:
 
 1. Ionic v2
 2. API: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
-
----
-
-[Download](https://github.com/rubenandre/AppSismosIonic/blob/master/platforms/android/build/outputs/apk/android-debug.apk)
-
