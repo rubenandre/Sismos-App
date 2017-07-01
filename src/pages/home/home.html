@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Sismos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+    pullingIcon="arrow-dropdown"
+    pullingText="Puxe para atualizar"
+    refreshingSpinner="circles"
+    refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let sismo of novosSismos">
+    <ion-card-header>
+      <h6>{{ sismo.properties.place }}</h6>
+    </ion-card-header>
+    <img src="https://api.mapbox.com/v4/mapbox.streets/url-http%3A%2F%2Fi.imgur.com%2FILggLoH.png({{ sismo.geometry.coordinates[0] }},{{ sismo.geometry.coordinates[1] }})/{{ sismo.geometry.coordinates[0] }},{{ sismo.geometry.coordinates[1] }},7/400x200@2x.png?access_token=pk.eyJ1IjoicnViZW5zaWx2YSIsImEiOiJjaXo2YWRmeDcwMDc4MzJwYWRhdmZ5bjJ2In0.C6Q7VUHihUcJOrGtJk0REA">
+    <ion-item>
+      <button ion-button icon-left clear small>
+        <ion-icon name="speedometer"></ion-icon>
+        <p>Magnitude: {{sismo.properties.mag }}</p>
+      </button>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
